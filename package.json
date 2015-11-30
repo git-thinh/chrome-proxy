@@ -1,9 +1,10 @@
 {
   "name": "chrome-proxy",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "private": false,
   "description": "An Object.observe based ES6 Proxy polyfill for Chrome",
-  "main": "dist/chrome-proxy.js",
+  "main": "index.js",
+  "isomorphic":true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -12,7 +13,8 @@
     "url": "https://github.com/anywhichway/chrome-proxy.git"
   },
   "keywords": [
-    "Object.observe"
+    "Object.observe",
+    "Proxy"
   ],
   "author": "Simon Y. Blackwell <syblackwell@anywhichway.com> (http://www.github.com/anywhichway)",
   "license": "MIT",

@@ -52,7 +52,8 @@
 							return handler.set(target,key,value,proxy);
 						}
 						if(!Object.getOwnPropertyDescriptor(handler,key)) { // handler property stops value from passing down to target
-							return target[key] = value;
+							target[key] = value;
+							return value;
 						}
 					}
 				}
@@ -76,7 +77,7 @@
 			Object.original.defineProperty.call(Object,proxy, 'valueOf', {value: target.valueOf.bind(target)});
 			Object.original.defineProperty.call(Object,proxy, '__proto__', {
 				get: function() { return Object.getPrototypeOf(proxy); },
-				set: function(val){ return Object.setPrototypeOf(proxy,value);	}
+				set: function(value){ return Object.setPrototypeOf(proxy,value);	}
 			});
 			Object.original.defineProperty.call(Object,proxy, 'hasOwnProperty', {value: function (property) {
 				if (handler.has) {
@@ -93,7 +94,7 @@
 				addHandling(proxy,key,target[key]);
 			});
 			// Observe the target for changes and update the handlers accordingly
-			targetobserver = function (changeset) {
+			var targetobserver = function (changeset) {
 				changeset.forEach(function(change) {
 					if(change.name!=="__target__") {
 						if(change.type==="delete") {
@@ -115,8 +116,7 @@
 						if(change.type==="delete") {
 							if(handler.deleteProperty) {
 								if(!handler.deleteProperty(target,change.name)) { // restore property if delete handler fails
-									var desc = Object.getOwnPropertyDescriptor.call(target,change.name);
-									Object.original.defineProperty(Object,proxy,desc);
+									Object.original.defineProperty(Object,proxy,Object.getOwnPropertyDescriptor.call(target,change.name));
 								}
 							} else {
 								delete target[change.name];
@@ -127,12 +127,11 @@
 								if(!desc) {
 									desc = Object.original.getOwnPropertyDescriptor.call(Object,proxy,change.name);
 								}
-									if(desc && handler.defineProperty(target,change.name,desc)) {
-										addHandling(proxy,change.name,desc.value);
-									} else { // delete property if define handler fails
-										delete proxy[change.name];
-									}
-								//}
+								if(desc && handler.defineProperty(target,change.name,desc)) {
+									addHandling(proxy,change.name,desc.value);
+								} else { // delete property if define handler fails
+									delete proxy[change.name];
+								}
 							} 
 							if(target[change.name]!==proxy[change.name]){
 								target[change.name] = proxy[change.name];
@@ -148,7 +147,7 @@
 		Object.original = Object;
 	}
 	
-	if (typeof(module) != 'undefined' && module.exports) {
+	if (typeof(module) !== 'undefined' && module.exports) {
 		module.exports  = Proxy;
 	} else if (typeof define === 'function' && define.amd) {
 		// Publish as AMD module

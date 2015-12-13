@@ -13,13 +13,11 @@ Or, copy the contents of dist/proxy-observe.js to your local machine and include
 
 Chrome used to have a proxy and it was abruptly removed over a year ago for unspecified security reasons. Proxies are useful. This is a development placeholder based on Object.observe until they become available again. There is currently no plan to turn this into a robust long term implementation, particularly since the future of Object.observe is not guaranteed.
 
-
 # Release History (reverse chronological order)
 
 v0.0.4 2015-12-12 Codacy improvements, corrected error with setting __proxy__
 
 v0.0.1 2015-11-07 Initial public release. No unit tests yet. Consider this an ALPHA.
-
 
 # License
 

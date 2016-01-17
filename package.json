@@ -1,12 +1,14 @@
 {
   "name": "chrome-proxy",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "private": false,
   "description": "An Object.observe based ES6 Proxy polyfill for Chrome",
   "main": "index.js",
-  "isomorphic":true,
+  "isomorphic": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "istanbul cover node_modules/mocha/bin/_mocha --report lcov -- -R spec",
+    "browserify": "browserify index.js -o browser/chrome-proxy.js",
+    "minify": "minify browser/chrome-proxy.js"
   },
   "repository": {
     "type": "git",
@@ -21,8 +23,12 @@
   "bugs": {
     "url": "https://github.com/anywhichway/chrome-proxy/issues"
   },
-  "dependencies": {
-   
-  },
-  "homepage": "https://github.com/anywhichway/chrome-proxy"
+  "dependencies": {},
+  "homepage": "https://github.com/anywhichway/chrome-proxy",
+  "devDependencies": {
+    "chai": "^3.4.1",
+    "codeclimate-test-reporter": "^0.2.0",
+    "istanbul": "^0.4.2",
+    "mocha": "^2.3.4"
+  }
 }

@@ -10,6 +10,8 @@ npm install chrome-proxy
 [![Test Coverage](https://codeclimate.com/github/anywhichway/chrome-proxy/badges/coverage.svg)](https://codeclimate.com/github/anywhichway/chrome-proxy/coverage)
 [![Issue Count](https://codeclimate.com/github/anywhichway/chrome-proxy/badges/issue_count.svg)](https://codeclimate.com/github/anywhichway/chrome-proxy)
 
+[![NPM](https://nodei.co/npm/chrome-proxy.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/<chrome-proxy>/)
+
 # Philosophy
 
 Chrome used to have a proxy and it was abruptly removed over a year ago for unspecified security reasons. Proxies are useful. This is a development placeholder based on Object.observe until they become available again in early 2016. There is currently no plan to turn this into a robust long term implementation, particularly since Object.observe may disappear in 2016.

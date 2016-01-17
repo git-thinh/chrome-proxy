@@ -6,6 +6,9 @@ An Object.observe based ES6 Proxy polyfill for Chrome
 npm install chrome-proxy
 
 [![Codacy Badge](https://api.codacy.com/project/badge/grade/84821902325f4477b1797ca872232114)](https://www.codacy.com/app/syblackwell/chrome-proxy)
+[![Code Climate](https://codeclimate.com/github/anywhichway/chrome-proxy/badges/gpa.svg)](https://codeclimate.com/github/anywhichway/chrome-proxy)
+[![Test Coverage](https://codeclimate.com/github/anywhichway/chrome-proxy/badges/coverage.svg)](https://codeclimate.com/github/anywhichway/chrome-proxy/coverage)
+[![Issue Count](https://codeclimate.com/github/anywhichway/chrome-proxy/badges/issue_count.svg)](https://codeclimate.com/github/anywhichway/chrome-proxy)
 
 # Philosophy
 
@@ -13,7 +16,7 @@ Chrome used to have a proxy and it was abruptly removed over a year ago for unsp
 
 # Release History (reverse chronological order)
 
-v0.0.6 2016-01-17 Created browserified and minified version. Added some unit tests. Added .travis.yml and .codeclimate.yml.
+v0.0.6 2016-01-17 Created browserified and minified version. Added some unit tests. Added .travis.yml and .codeclimate.yml. Updated badges.
 
 v0.0.5 2015-12-13 Corrected README
 

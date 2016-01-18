@@ -18,6 +18,8 @@ Chrome used to have a proxy and it was abruptly removed over a year ago for unsp
 
 # Release History (reverse chronological order)
 
+v0.0.7 2016-01-18 Corrected issue where deleted properties were not properly restored if deleteProperty trap failed.
+
 v0.0.6 2016-01-17 Created browserified and minified version. Added some unit tests. Added .travis.yml and .codeclimate.yml. Updated badges.
 
 v0.0.5 2015-12-13 Corrected README

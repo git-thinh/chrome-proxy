@@ -121,7 +121,7 @@
 							if(change.type==="delete") {
 								if(handler.deleteProperty) {
 									if(!handler.deleteProperty(target,change.name)) { // restore property if delete handler fails
-										Object.original.defineProperty(Object,proxy,Object.getOwnPropertyDescriptor.call(target,change.name));
+										Object.original.defineProperty(Object,proxy,Object.original.getOwnPropertyDescriptor(target,change.name));
 									}
 								} else {
 									delete target[change.name];

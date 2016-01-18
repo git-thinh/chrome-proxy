@@ -1,6 +1,6 @@
 {
   "name": "chrome-proxy",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "private": false,
   "description": "An Object.observe based ES6 Proxy polyfill for Chrome",
   "main": "index.js",

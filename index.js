@@ -14,7 +14,7 @@
 				Object.original[fname] = oldf;
 				Object[fname] = function() {
 					var object = arguments[0];
-					if(object instanceof Proxy) {
+					if(typeof(Proxy)!=="undefined" && object instanceof Proxy) {
 						if(fname==="getOwnPropertyNames" && object.ownKeys) {
 							return object.ownKeys(object.__target__);
 						} else if(object.__handler__[fname]) {

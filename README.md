@@ -12,6 +12,10 @@ npm install chrome-proxy
 
 [![NPM](https://nodei.co/npm/chrome-proxy.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/<chrome-proxy>/)
 
+# Notes
+
+The limited unit tests currently implemented all pass in the Chrome browser. Property getting and setting work within Node, but *getPrototypeOf* and *getOwnPropertyDescriptor* unit tests fail within Node.
+
 # Philosophy
 
 Chrome used to have a proxy and it was abruptly removed over a year ago for unspecified security reasons. Proxies are useful. This is a development placeholder based on Object.observe until they become available again in early 2016. There is currently no plan to turn this into a robust long term implementation, particularly since Object.observe may disappear in 2016.

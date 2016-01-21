@@ -153,7 +153,7 @@
 	}
 	
 	if(this.exports) {
-		this.exports.Proxy = (typeof(Proxy)!=="undefined" ? Proxy : ProxyConstructor());
+		this.exports = (typeof(Proxy)!=="undefined" ? Proxy : ProxyConstructor());
 	} else if (typeof define === 'function' && define.amd) {
 		// Publish as AMD module
 		define(function() {return (typeof(Proxy)!=="undefined" ? Proxy : ProxyConstructor());});

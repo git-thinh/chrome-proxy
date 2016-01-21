@@ -1,4 +1,4 @@
-var expect;
+var expect, Proxy;
 if(typeof(window)==="undefined") {
 	expect = require("chai").expect;
 	Proxy = require('../index.js');
@@ -13,7 +13,7 @@ describe('Do Nothing Proxy', function() {
   it('get & set ', function() {
 	  expect(p.property).to.equal("a");
 	  p.property = "b";
-	  expect(p.property).to.equal("b");
+	  expect(o.property).to.equal("b");
   });
   it('getPrototypeOf ', function() {
 	  expect(Object.getPrototypeOf(p)===Object.getPrototypeOf(o)).to.be.true;

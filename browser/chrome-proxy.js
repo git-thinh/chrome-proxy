@@ -153,13 +153,13 @@
 		Object.original = Object;
 	}
 	
-	if(typeof(window)==="object") {
-		window.Proxy = (typeof(Proxy)!=="undefined" ? Proxy : ProxyConstructor());
+	if(this.exports) {
+		this.exports.Proxy = (typeof(Proxy)!=="undefined" ? Proxy : ProxyConstructor());
 	} else if (typeof define === 'function' && define.amd) {
 		// Publish as AMD module
 		define(function() {return (typeof(Proxy)!=="undefined" ? Proxy : ProxyConstructor());});
 	} else {
-		module.exports = (typeof(Proxy)!=="undefined" ? Proxy : ProxyConstructor());
+		this.Proxy = (typeof(Proxy)!=="undefined" ? Proxy : ProxyConstructor());
 	}
-})();
+}).call((typeof(window)!=='undefined' ? window : (typeof(module)!=='undefined' ? module : null)));
 },{}]},{},[1]);

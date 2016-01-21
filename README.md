@@ -18,6 +18,8 @@ Chrome used to have a proxy and it was abruptly removed over a year ago for unsp
 
 # Release History (reverse chronological order)
 
+v0.0.9 2016-01-21  Reworked module closure wrapper so it would work regardless of wether *browserify* is used. 
+
 v0.0.8 2016-01-18 Reworked module structure which seemed to fail to define Proxy in some situations.
 
 v0.0.7 2016-01-18 Corrected issue where deleted properties were not properly restored if deleteProperty trap failed.

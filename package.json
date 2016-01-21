@@ -4,6 +4,7 @@
   "private": false,
   "description": "An Object.observe based ES6 Proxy polyfill for Chrome",
   "main": "index.js",
+  "client": "./browser/chrome-proxy.js",
   "isomorphic": true,
   "scripts": {
     "test": "istanbul cover node_modules/mocha/bin/_mocha --report lcov -- -R spec",
